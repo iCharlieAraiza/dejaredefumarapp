@@ -1,0 +1,11 @@
+:root {
+  --font-color: #000;
+  --color-orange: #DF4646;
+  --color-dark-green: #104447;
+  --color-light-gray: #F4F3EF;
+  --color-medium-gray: #efefef;
+}
+
+[data-theme="dark"] {
+  --font-size: rgb(255, 255, 255);
+}
