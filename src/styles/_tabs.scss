@@ -1,0 +1,22 @@
+.tabs {
+  display: flex;
+}
+
+.tab {
+  padding: 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  color: #545F71;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 200ms ease;
+  cursor: pointer;
+  &.active {
+    border-bottom: 2px solid var(--color-orange);
+    color: var(--color-orange);
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

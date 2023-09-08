@@ -7,6 +7,9 @@
 .navbar__logo {
   font-size: 22px;
   font-weight: 700;
+  a {
+    text-decoration: none;
+  }
 }
 
 nav {
@@ -25,4 +28,5 @@ nav {
   align-items: center;
   font-size: 14px;
   margin-right: 1rem;
+  font-weight: 500;
 }

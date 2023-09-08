@@ -3,18 +3,23 @@ import Avatar from "./Avatar";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import {logout} from "../hooks/authHooks";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const {user} = useContext(GlobalContext);
+  if(!user) return null
   const [session, loading, error] = user
 
-  console.log(session);
   return (
     <nav>
       <div className="container navbar__container">
-        <span className="navbar__logo">Navbar</span>
+        <span className="navbar__logo">
+          <Link to="/">
+            Navbar
+          </Link>
+          </span>
         <dl>
-          {loading ? <dt>Loading...</dt> : <ButtonSection session={session} /> }
+          {loading ? <><div className='avatar-circle skeleton'></div> <dt><div className="skeleton skeleton--navbar"></div></dt> </>: <ButtonSection session={session} /> }
         </dl>
       </div>
     </nav>
