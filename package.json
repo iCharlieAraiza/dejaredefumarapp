@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://app.dejaredefumar.com",
-  "main": "main.tsx",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
