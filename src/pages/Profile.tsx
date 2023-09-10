@@ -5,19 +5,13 @@ import { GlobalContext } from "../context/GlobalContext";
 import { Dashboard } from "../components/Dashboard";
 
 export const Profile = () => {
-  const { user, profile, dispatch } = useContext(GlobalContext);
+  const { user, profile } = useContext(GlobalContext);
+
+  const [currentProfile, loading] = profile
 
   const [username, setUsername] = useState("");
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch({ type: "SET_LOADING", payload: true });
-    dispatch({
-      type: "SET_USER",
-      payload: {
-        username: username,
-        loading: false,
-      },
-    });
     console.log(username);
   };
 
@@ -31,7 +25,7 @@ export const Profile = () => {
         </div>
 
         <div className="col-right">
-          {!profile.username ? <h1>...</h1> : <h1>Profile {profile.username}</h1>}
+          {!currentProfile.username ? <h1>...</h1> : <h1>Profile {currentProfile.username}</h1>}
           <Link to="/">Homepage</Link>
           <div>Profile</div>
           <form onSubmit={onSubmit}>
@@ -42,8 +36,12 @@ export const Profile = () => {
             />
             <button type="submit">Submit</button>
           </form>
+
           {
-            profile.username && <Dashboard profile={profile}/>
+            loading && <h1>Loading...</h1>
+          }
+          {
+            (currentProfile.username && !loading) && <Dashboard profile={currentProfile}/>
           }
         </div>
       </div>

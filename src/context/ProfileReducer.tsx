@@ -5,7 +5,7 @@ export const profileReducer = (state, action) => {
     case "SET_LOADING":
       return { ...state, loading: action.payload };
     case "UPDATE":
-      return { ...state, user: { ...state.user, ...action.payload } };
+      return { ...state, ...action.payload };
     case "SET_ERROR":
       return { ...state, error: action.payload };
     default:

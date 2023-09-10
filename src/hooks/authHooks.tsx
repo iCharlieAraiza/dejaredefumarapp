@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword
+} from 'firebase/auth';
 import { auth } from '../firebase/index';
 
 export const useAuthState = () => {
@@ -43,3 +44,46 @@ export const useLoginWithGoogle = () => {
 
   return [login, loading, error];
 };
+
+
+export const useLoginWithEmail = () => {
+  const [error, setError] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState<any>(null);
+
+  const login = async (email, password) => {
+    setLoading(true);
+    try {
+      const result = await signInWithEmailAndPassword(auth, email, password);
+      setUser(result.user);
+    } catch (error) {
+      console.log(error);
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return [login, loading, error];
+}
+
+export const useRegisterWithEmail = () => {
+  const [error, setError] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
+
+  const register = async (email, password) => {
+    setLoading(true);
+    try {
+      const resp = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(resp)
+    } catch (error) {
+      console.log(error);
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return [register, loading, error];
+}
+

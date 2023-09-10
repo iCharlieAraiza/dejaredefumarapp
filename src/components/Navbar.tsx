@@ -20,6 +20,7 @@ const Navbar = () => {
           </span>
         <dl>
           {loading ? <><div className='avatar-circle skeleton'></div> <dt><div className="skeleton skeleton--navbar"></div></dt> </>: <ButtonSection session={session} /> }
+          {error && <dt>{error}</dt>}
         </dl>
       </div>
     </nav>
@@ -46,7 +47,9 @@ const ButtonSection = ({session}) => {
           ) : (
             <>
               <dt>
-                <button className="btn">Sign Up</button>
+                <Link  to="/signup" className="btn btn-sm">
+                 Sign Up
+                </Link>
               </dt>
               <dt>
                 <button className="btn btn--primary">

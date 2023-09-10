@@ -10,6 +10,9 @@ import { GlobalContext } from "../context/GlobalContext";
 export const Edit = () => {
   const [tabValue, setTabValue] = useState(1)
   const {profile} = useContext(GlobalContext)
+  const [currentProfile, loading] = profile
+
+  console.log("EDIT PAGE:", profile);
 
   return (
     <MainLayout>
@@ -23,7 +26,8 @@ export const Edit = () => {
               value={tabValue} 
               onChange={(e) => setTabValue(e)}
               items={[{value:1, label:"1. Configuración"}, {value:2, label:"2. Actualizar", disabled: true}]} />
-              {profile.username && <EditForm profile ={profile} /> }
+              {loading && <h1>Loading...</h1>}
+              {(currentProfile.username && !loading) && <EditForm profile ={currentProfile} /> }
             
           </div>
         </div>

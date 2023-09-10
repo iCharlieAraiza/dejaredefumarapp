@@ -13,6 +13,7 @@ const Homepage = ({ session }) => {
     <MainLayout>
       <div className="container">
         <Link to="/profile">Profile</Link>
+        <Link to="/edit">Update</Link>
         {loading && <h1>Loading...</h1>}
         <h1>Homepage</h1>
         {!user && (

@@ -6,6 +6,34 @@
 
 }
 
+.form-title {
+  text-align: center;
+}
+
+.form-description {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  &::before, &::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #c4c4c4;
+  }
+}
+
+.form-title__label {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+
 @media (min-width: 1068px) {
   .form-row-2-col {
     display: grid;

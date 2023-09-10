@@ -1,8 +1,10 @@
 {
-  "name": "firebase-login",
-  "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "name": "dejaredefumar",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://app.dejaredefumar.com",
+  "main": "main.tsx",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -10,13 +12,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dayjs": "^1.11.9",
     "firebase": "^10.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.10.1",
-    "react-router-dom": "^6.15.0",
-    "sass": "^1.66.1"
-  },
+    "react-icons": "^4.10.1"
+    },
   "devDependencies": {
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
@@ -27,8 +28,22 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "react-router-dom": "^6.4.2",
+    "sass": "^1.66.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vitest": "^0.34.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

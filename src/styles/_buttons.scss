@@ -5,6 +5,10 @@
   padding: 0.5rem 1rem;
   border: 1px solid transparent;
   background-color: var(--color-medium-gray);
+  text-decoration: none;
+  font-size: 14px;
+  color: inherit;
+
   cursor: pointer;
   &:hover {
     opacity: 0.75;
@@ -14,4 +18,31 @@
 .btn--primary {
   background-color: var(--color-orange);
   color: white;
+}
+
+.btn-form {
+  width: 100%;
+  background: var(--color-orange);
+  color: white;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+}
+
+.btn-form-social {
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid rgb(207, 207, 207);
+  color: var(--font-color);
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  &:hover {
+    background-color: rgb(246, 246, 246);
+  }
+}
+
+.sign-form {
+  max-width: 450px;
+  margin: 0 auto;
 }
