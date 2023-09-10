@@ -3,6 +3,7 @@
   "name": "dejaredefumar",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://app.dejaredefumar.com/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

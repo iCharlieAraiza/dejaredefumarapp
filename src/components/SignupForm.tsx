@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { useRegisterWithEmail } from "../hooks/authHooks";
+import { useRegisterWithEmail, useLoginWithGoogle} from "../hooks/authHooks";
+import { Link } from "react-router-dom";
 
 const SignupForm = () => {
   const [success, setSuccess] = useState(false);
   const [register, loading, error] = useRegisterWithEmail();
+  const [googleLogin, loadingGoogle, errorGoogle] = useLoginWithGoogle();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,12 +34,12 @@ const SignupForm = () => {
       {success && !loading && <p>Se ha registrado de forma adecuada</p>}
       {error && <p>Ha ocurrido un error</p>}
       <h2 className="form-title">Regístrate</h2>
-      <p className="form-description">Crea una cuenta en dejaredefumar.com</p>
+      <p className="form-description">Crea una cuenta en dejaredefumar.com. ¿Ya te registrate? <Link to="/login">Inicia sesión</Link></p>
       <div className="form-row">
-        <button className="btn btn-form-social btn-form">
+        <div className="btn btn-form-social btn-form" onClick={() => googleLogin()}>
           <FcGoogle/>
           Iniciar sesión con Google
-        </button>
+        </div>
       </div>
       <div className="form-title-container">
         <p className="form-title__label">con correo electrónico</p>
@@ -47,7 +49,6 @@ const SignupForm = () => {
           <label htmlFor="">Email de usuario *</label>
           <input
             type="email"
-            placeholder="nombre@correo.com"
             className="w-input"
             name="email"
             required

@@ -52,10 +52,10 @@ const ButtonSection = ({session}) => {
                 </Link>
               </dt>
               <dt>
-                <button className="btn btn--primary">
+                <Link to="/login" className="btn btn--primary">
                   <AiOutlineLogin style={{ "margin-right": "10px" }} />
                   Login
-                </button>
+                </Link>
               </dt>
             </>
           )}

@@ -8,8 +8,8 @@
   text-decoration: none;
   font-size: 14px;
   color: inherit;
-
-  cursor: pointer;
+  cursor:pointer;
+  box-sizing: border-box;
   &:hover {
     opacity: 0.75;
   }
