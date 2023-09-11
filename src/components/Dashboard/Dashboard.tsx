@@ -68,7 +68,7 @@ export const Dashboard = ({ profile }) => {
 
       <div className="badge-section">
         <div className="row">
-          <a href="#" className="dashboard__readmore">Insignias ganadas -></a>
+          <a href="#" className="dashboard__readmore">Insignias ganadas →</a>
         </div>
         <div className="row col-6">
           <div className="dashboard__group health-badge">
