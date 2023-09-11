@@ -15,7 +15,7 @@ export const Tabs = ({value, onChange, items}) => {
           return <Tab key={index} 
             label={item.label} 
             active={value === item.value}
-            onClick={() => {}}
+            onClick={() => {value === 2 && onChange(item.value)}}
             disabled={item.disabled}
             />
         } )

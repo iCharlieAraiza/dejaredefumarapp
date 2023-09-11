@@ -11,6 +11,15 @@
   color: #104447;
 }
 
+.dashsboard__top-row {
+  display: flex!important;
+  justify-content: space-between;
+}
+
+.dashboard__edit {
+  border-bottom: 2px dotted var(--color-orange);
+}
+
 .underline-value {
   width: fit-content;
   position: relative;
@@ -62,8 +71,11 @@
 .dashboard__container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-row-gap: 2rem;
-  margin-top: 2rem;
+  grid-row-gap: 3rem;
+}
+
+.dashboard__first-section {
+  margin-top: -1rem;
 }
 
 .health-badge {

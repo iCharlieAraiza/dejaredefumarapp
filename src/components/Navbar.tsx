@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="container navbar__container">
         <span className="navbar__logo">
           <Link to="/">
-            Navbar
+            Dejare de Fumar
           </Link>
           </span>
         <dl>

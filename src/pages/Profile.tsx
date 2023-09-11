@@ -9,14 +9,15 @@ export const Profile = () => {
 
   const [currentProfile, loading] = profile
 
+  const name = currentProfile.display_name ? currentProfile.display_name.split(" ")[0] : ''; 
+
   return (
     <MainLayout>
       <div className="separator"></div>
       <div className="container main__two-column">
         <div className="col-left">
-          <h1>¡Muy buenas!</h1>
+          <h1>¡Muy buenas{name && <span style={{"color":"var(--color-orange)"}}> {name}</span>}!</h1>
           <h4>Aquí van tus estadísticas</h4>
-          <label htmlFor="">Email de usuario</label>
         </div>
 
         <div className="col-right">

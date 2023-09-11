@@ -3,9 +3,10 @@ import { useInput } from "../hooks/useInput";
 import dayjs from "dayjs";
 
 import { GlobalContext } from "../context/GlobalContext";
+import { toast } from "react-toastify";
 
 
-const EditForm = ({profile}) => {
+const EditForm = ({profile, callback}) => {
   const {updateProfileService} = useContext(GlobalContext)
 
   const displayName = useInput(profile.display_name, "text");
@@ -15,15 +16,12 @@ const EditForm = ({profile}) => {
   const cigarratesPerDay = useInput(profile.cigarrates.cigarrates_per_day, "number");
   const dateQuit = useInput(profile.date_quit ? profile.date_quit : dayjs().format("YYYY-MM-DD"), "date");
   const total = useInput(profile.cigarrates.total, "number");
-
-
-  console.log(dateQuit.value)
     
   if(!profile.username) {
     return null;
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault()
     const resp = {
       age: age.value,
@@ -34,11 +32,13 @@ const EditForm = ({profile}) => {
         cigarrates_per_day: cigarratesPerDay.value
       }
     }
-
-    updateProfileService(resp)
-
-
-    console.log("SUBMIT")
+    try {
+      await updateProfileService(resp)
+      toast.success("Perfil actualizado")
+      callback();
+    } catch (e) {
+      toast.error("Ha ocurrido un error")
+    }
   }
 
   return (

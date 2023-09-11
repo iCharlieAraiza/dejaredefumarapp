@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
+
 import { calculateDays } from "../../utils/calculatorUtils";
 import { StarIcon, MoneyIcon, CigarreteIcon, ClockIcon, HeartIcon } from "./Icons";
 import Badge from "./Badge";
+
 
 import dayjs from "dayjs";
 
@@ -20,7 +23,7 @@ export const Dashboard = ({ profile }) => {
 
   return (
     <section className="dashboard__container">
-      <div className="row">
+      <div className="row dashsboard__top-row">
         <div className="dashboard__group">
           <div className="dashboard__label">
             Nivel:
@@ -29,9 +32,12 @@ export const Dashboard = ({ profile }) => {
             </span>
           </div>
         </div>
+        <Link to="/edit" className="dashboard__edit">
+          Editar información
+        </Link>
       </div>
 
-      <div className="row col-6">
+      <div className="row col-6 dashboard__first-section">
         <div className="dashboard__group">
           <div className="dashboard__label">Llevas sin fumar</div>
           <div className="dashboard__value underline-value"><span>{days}</span> días</div>

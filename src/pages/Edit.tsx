@@ -4,6 +4,7 @@ import MainLayout from "../layout/MainLayout";
 import EditForm from "../components/EditForm";
 
 import {Tabs} from '../components/Tabs'
+import CheckDone from "../components/CheckDone";
 
 import { GlobalContext } from "../context/GlobalContext";
 
@@ -20,7 +21,8 @@ export const Edit = () => {
       <div className="container">
         <div className="main__two-column">
           <div className="column-1">
-            <h1>Editar datos</h1>
+            <h1>Actualiza tu información</h1>
+            <p>Para calcular tus avances y tener un mejor seguimiento, agrega la siguiente información</p>
           </div>
           <div className="column-2">
             <Tabs 
@@ -28,8 +30,8 @@ export const Edit = () => {
               onChange={(e) => setTabValue(e)}
               items={[{value:1, label:"1. Configuración"}, {value:2, label:"2. Actualizar", disabled: true}]} />
               {loading && <h1>Loading...</h1>}
-              {(currentProfile.username && !loading) && <EditForm profile ={currentProfile} /> }
-            
+              {((currentProfile.username && !loading) && tabValue !== 2) && <EditForm profile ={currentProfile} callback = {() => setTabValue(2)} /> }
+              {tabValue === 2 && <CheckDone />}
           </div>
         </div>
       </div>

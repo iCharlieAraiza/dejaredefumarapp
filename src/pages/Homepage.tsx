@@ -11,14 +11,16 @@ const Homepage = ({ session }) => {
 
   return (
     <MainLayout>
+      <div className="separator"></div>
       <div className="container">
-        <Link to="/profile">Profile</Link>
-        <Link to="/edit">Update</Link>
         {loading && <h1>Loading...</h1>}
-        <h1>Homepage</h1>
-        {!user && (
-          <button onClick={() => loginWithGoogle()}>Login with Google</button>
-        )}
+        <h1>Bienvenido a la versión pre alfa de DejareDeFumar.com</h1>
+        <p>Si ya iniciaste sesión, puedes acceder a las siguientes secciones:</p>
+        <ul>
+          <li><Link to="/profile">Perfil</Link></li>
+          <li><Link to="/edit">Actualizar información</Link></li>
+        </ul>
+        <p>Si todavía no tienes cuenta o no inicias sesión,<Link to="/signin">inicia sesión</Link> o <Link to="/signup">regístrate</Link></p>
       </div>
       <div className="ph-item">
         <div className="ph-col-2">

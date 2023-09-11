@@ -11,6 +11,9 @@ import PrivateRoute from "./routes/PrivateRoute";
 import SignUp from "./pages/SignUp";
 import NotLoggedRoute from "./routes/NotLoggedRoute";
 import Login from "./pages/Login";
+import { ToastContainer } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const { user } = useContext(GlobalContext);
@@ -41,6 +44,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </>
   );
 }
