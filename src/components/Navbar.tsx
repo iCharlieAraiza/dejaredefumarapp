@@ -17,6 +17,9 @@ const Navbar = () => {
           <Link to="/">
             Dejare de Fumar
           </Link>
+          <span className="navbar__version">
+            version alfa.1
+          </span>
           </span>
         <dl>
           {loading ? <><div className='avatar-circle skeleton'></div> <dt><div className="skeleton skeleton--navbar"></div></dt> </>: <ButtonSection session={session} /> }

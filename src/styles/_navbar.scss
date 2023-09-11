@@ -7,9 +7,18 @@
 .navbar__logo {
   font-size: 22px;
   font-weight: 700;
+  letter-spacing: -0.6px;
   a {
     text-decoration: none;
   }
+}
+
+.navbar__version {
+  font-size: 12px;
+  font-weight: 500;
+  color: #545F71;
+  letter-spacing: -0.28px;
+  margin-right: 1rem;
 }
 
 nav {

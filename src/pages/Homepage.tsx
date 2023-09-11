@@ -20,7 +20,7 @@ const Homepage = ({ session }) => {
           <li><Link to="/profile">Perfil</Link></li>
           <li><Link to="/edit">Actualizar información</Link></li>
         </ul>
-        <p>Si todavía no tienes cuenta o no inicias sesión,<Link to="/signin">inicia sesión</Link> o <Link to="/signup">regístrate</Link></p>
+        <p>Si todavía no tienes cuenta o no inicias sesión,<Link to="/login">inicia sesión</Link> o <Link to="/signup">regístrate</Link></p>
       </div>
       <div className="ph-item">
         <div className="ph-col-2">
