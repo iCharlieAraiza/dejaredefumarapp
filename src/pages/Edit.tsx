@@ -16,6 +16,7 @@ export const Edit = () => {
 
   return (
     <MainLayout>
+      <div className="separator"></div>
       <div className="container">
         <div className="main__two-column">
           <div className="column-1">

@@ -2,8 +2,10 @@
 
 @use 'avatar';
 @use 'buttons';
+@use 'dashboard';
 @use 'form';
 @use 'headers';
+@use 'hero';
 @use 'input';
 @use 'navbar';
 @use 'layout';
@@ -27,4 +29,9 @@ a {
   font-weight: 500;
   color: var(--color-orange);
   text-decoration: none;
+}
+
+p {
+  line-height: 24px;
+  margin: 7px 0;
 }
