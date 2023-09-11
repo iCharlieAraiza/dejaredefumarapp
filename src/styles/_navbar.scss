@@ -5,9 +5,9 @@
 }
 
 .navbar__logo {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: -0.6px;
+  letter-spacing: -0.8px;
   a {
     text-decoration: none;
   }
@@ -19,16 +19,12 @@
   color: #545F71;
   letter-spacing: -0.28px;
   margin-right: 1rem;
+  margin-left: 5px;
 }
 
 nav {
   box-shadow: 0 1px 3px 0 #d4d9e1;
-    dl {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5px;
-  }
+  padding: 1rem 0;
 }
 
 .navbar__user {
@@ -38,4 +34,59 @@ nav {
   font-size: 14px;
   margin-right: 1rem;
   font-weight: 500;
+}
+
+.navbar__content {
+  display: none;
+}
+
+.mobile-menu {
+  position: absolute;
+  z-index: 100;
+  background-color: #ffffff;
+  height: 100%;
+  top: 0;
+  width: 250px;
+  animation: sidein 0.5s ease-in-out;
+  border-right: 2px solidrgb(218, 218, 218)y;
+  dt {
+    padding: 10px;
+  }
+}
+
+.modal-menu {
+  position: absolute;
+  z-index: 1;
+  background-color: #67676736;
+  height: 100%;
+  top: 0;
+  width: 100%;
+}
+
+@keyframes sidein {
+  0% {
+    left: -300px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@media (min-width: 1068px) {
+  .navbar__logo {
+    font-size: 22px;
+  }
+  .navbar__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+  }
+  .menuButton {
+    display: none;
+  }
+
+  nav {
+    padding: 0;
+  }
 }

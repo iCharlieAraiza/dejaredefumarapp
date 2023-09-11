@@ -7,7 +7,7 @@
 
 .dashboard__value {
   font-weight: 500;
-  font-size: 38px;
+  font-size: 30px;
   color: #104447;
 }
 
@@ -45,8 +45,8 @@
 }
 
 .dashboard__group {
+  margin-bottom: 2rem;
 }
-
 
 .aux-icon {
   margin-right: 1rem;
@@ -98,9 +98,13 @@
 
 @media (min-width: 1068px) {
   .dashboard__value {
-    font-size: 38px;
+    font-size: 35px;
   } 
   .text-right-lg {
     text-align: right;
   }
+
+  .dashboard__group {
+    margin-bottom: 0.5rem;
+}
 }

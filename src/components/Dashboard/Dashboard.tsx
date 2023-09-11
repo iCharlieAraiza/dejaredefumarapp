@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 
 import { calculateDays } from "../../utils/calculatorUtils";
-import { StarIcon, MoneyIcon, CigarreteIcon, ClockIcon, HeartIcon } from "./Icons";
+import {
+  StarIcon,
+  MoneyIcon,
+  CigarreteIcon,
+  ClockIcon,
+  HeartIcon,
+} from "./Icons";
 import Badge from "./Badge";
-
 
 import dayjs from "dayjs";
 
@@ -32,15 +37,19 @@ export const Dashboard = ({ profile }) => {
             </span>
           </div>
         </div>
-        <Link to="/edit" className="dashboard__edit">
-          Editar información
-        </Link>
+        <div className="dashboard__group">
+          <Link to="/edit" className="dashboard__edit">
+            Editar información
+          </Link>
+        </div>
       </div>
 
       <div className="row col-6 dashboard__first-section">
         <div className="dashboard__group">
           <div className="dashboard__label">Llevas sin fumar</div>
-          <div className="dashboard__value underline-value"><span>{days}</span> días</div>
+          <div className="dashboard__value underline-value">
+            <span>{days}</span> días
+          </div>
           <p className="badge__days--p">
             Recuerda, los primeros 2 meses son escenciales. Después de esto,
             todo es más sencillo
@@ -53,7 +62,10 @@ export const Dashboard = ({ profile }) => {
       </div>
 
       <div className="row col-3">
-        <Badge title="Has ahorrado" value={`${ Math.round(cigarretesPerDayPrice)}€`}>
+        <Badge
+          title="Has ahorrado"
+          value={`${Math.round(cigarretesPerDayPrice)}€`}
+        >
           <MoneyIcon />
         </Badge>
 
@@ -74,15 +86,21 @@ export const Dashboard = ({ profile }) => {
 
       <div className="badge-section">
         <div className="row">
-          <a href="#" className="dashboard__readmore">Insignias ganadas →</a>
+          <a href="#" className="dashboard__readmore">
+            Insignias ganadas →
+          </a>
         </div>
         <div className="row col-6">
           <div className="dashboard__group health-badge">
-            <div className="aux-icon"><HeartIcon/></div>
+            <div className="aux-icon">
+              <HeartIcon />
+            </div>
             <div>
               <div className="dashboard__label">Logros de salud</div>
               <div>
-                <p className="health-badge__title" >Mejora después de 3 semanas</p>
+                <p className="health-badge__title">
+                  Mejora después de 3 semanas
+                </p>
                 <p>
                   La sangre bombeará mucho mejor hacia el corazón y los músculos
                 </p>
