@@ -20,7 +20,7 @@ export const Edit = () => {
       <div className="separator"></div>
       <div className="container">
         <div className="main__two-column">
-          <div className="column-1">
+          <div className="column-1 col-left">
             <h1>Actualiza tu información</h1>
             <p>Para calcular tus avances y tener un mejor seguimiento, agrega la siguiente información</p>
           </div>

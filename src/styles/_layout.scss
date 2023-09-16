@@ -19,8 +19,18 @@
   grid-template-columns: 1fr;
 }
 
+.col-left {
+  border-bottom: 1px solid #e2ebee;
+  margin-bottom: 1rem;
+}
 
 @media (min-width: 1024px) {
+  .col-left {
+    border-bottom: none;
+    margin-bottom: 0;
+    border-right: 1px solid #e2ebee;
+  }
+  
   .col-6 {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 24px;
