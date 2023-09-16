@@ -13,8 +13,6 @@ export const Edit = () => {
   const {profile} = useContext(GlobalContext)
   const [currentProfile, loading] = profile
 
-  console.log("EDIT PAGE:", profile);
-
   return (
     <MainLayout>
       <div className="separator"></div>

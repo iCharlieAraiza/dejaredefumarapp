@@ -26,6 +26,7 @@ const EditForm = ({profile, callback}) => {
     const resp = {
       age: age.value,
       date_quit: dateQuit.value,
+      display_name: displayName.value,
       cigarrates: {
         total: total.value,
         price: price.value,

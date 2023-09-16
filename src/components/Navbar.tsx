@@ -6,6 +6,8 @@ import { logout } from "../hooks/authHooks";
 import { Link } from "react-router-dom";
 
 import { AiOutlineMenu } from "react-icons/ai";
+import LogoSvg from "../assets/logo.svg";
+
 
 const Navbar = () => {
   const { user } = useContext(GlobalContext);
@@ -19,8 +21,9 @@ const Navbar = () => {
       <nav>
         <div className="container navbar__container">
           <span className="navbar__logo">
-            <Link to="/">Dejare de Fumar</Link>
-            <span className="navbar__version">version alfa.1.2</span>
+            <Link to="/">
+              <img src={LogoSvg} alt="Logo" />
+            </Link>
           </span>
           <dl className="navbar__content">
             {loading ? (
