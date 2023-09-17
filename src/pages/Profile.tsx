@@ -42,7 +42,8 @@ export const Profile = () => {
       </div>
     </MainLayout>
   );
-}; 
+};
+
 
 function ProfileIcon() {
   return (

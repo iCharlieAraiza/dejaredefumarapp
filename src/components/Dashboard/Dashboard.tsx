@@ -9,6 +9,7 @@ import {
   HeartIcon,
 } from "./Icons";
 import Badge from "./Badge";
+import HealthStatus from "./HealthStatus";
 
 import dayjs from "dayjs";
 
@@ -25,6 +26,7 @@ export const Dashboard = ({ profile }) => {
 
   const cigarretesPerDayPrice =
     ((price * cigarretesPerDay) / cigarretesBox) * days;
+
 
   return (
     <section className="dashboard__container">
@@ -90,24 +92,7 @@ export const Dashboard = ({ profile }) => {
             Insignias ganadas →
           </a>
         </div>
-        <div className="row col-6">
-          <div className="dashboard__group health-badge">
-            <div className="aux-icon">
-              <HeartIcon />
-            </div>
-            <div>
-              <div className="dashboard__label">Logros de salud</div>
-              <div>
-                <p className="health-badge__title">
-                  Mejora después de 3 semanas
-                </p>
-                <p>
-                  La sangre bombeará mucho mejor hacia el corazón y los músculos
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <HealthStatus days={days} />
       </div>
     </section>
   );
