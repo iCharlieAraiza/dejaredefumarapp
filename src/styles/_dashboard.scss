@@ -1,5 +1,5 @@
 .dashboard__label {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 17px;
   color: #909090;
   letter-spacing: -0.36px;
@@ -35,8 +35,8 @@
 }
 
 .dashboard__value--small {
-  color: #0f9d58;
-  font-size: 28px!important;
+  color: #698b64;
+  font-size: 24px !important;
 }
 
 .dashboard__level-tag {
@@ -80,6 +80,10 @@
 
 .health-badge {
   display: flex;
+  padding: 1rem;
+  border-radius: 7px;
+  border: 1px solid #e2ebee;
+  margin-bottom: 1.5rem!important;
 }
 
 .health-badge__title {
@@ -95,10 +99,9 @@
   margin-bottom: 1rem;
 }
 
-
 @media (min-width: 1068px) {
   .dashboard__value {
-    font-size: 35px;
+    font-size: 33px;
   } 
   .text-right-lg {
     text-align: right;

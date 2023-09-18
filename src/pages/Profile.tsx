@@ -27,7 +27,9 @@ export const Profile = () => {
               </h1>
               <h4>Aquí van tus estadísticas</h4>
               <Suspense fallback={<div>Loading...</div>}>
-                <ProfileIcon />
+                <div className="sidebar__img">
+                  <ProfileIcon />
+                </div>
               </Suspense>
             </>
           )}

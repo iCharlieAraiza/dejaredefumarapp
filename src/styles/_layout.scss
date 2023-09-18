@@ -24,6 +24,11 @@
   margin-bottom: 1rem;
 }
 
+.sidebar__img {
+  display: flex;
+  justify-content: center;
+}
+
 @media (min-width: 1024px) {
   .col-left {
     border-bottom: none;
@@ -38,5 +43,9 @@
   .col-3 {
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 24px;
+  }
+
+  .sidebar__img {
+    display: block;
   }
 }
