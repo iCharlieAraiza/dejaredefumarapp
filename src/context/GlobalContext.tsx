@@ -10,8 +10,10 @@ const profileInitialState = {
   isLoaded: false,
   error: false,
   date_quit: "",
+  time_quit: "",
   age: "",
   display_name: "",
+  motivation: "",
   cigarrates:{
     total: "20",
     price: "0.00",
@@ -48,6 +50,8 @@ export const GlobalProvider = ({ children }) => {
         display_name: user.displayName,
         date_quit: "",
         age: "",
+        time_quit: "",
+        motivation: "",
         cigarrates:{
           total: "20",
           price: "0.00",

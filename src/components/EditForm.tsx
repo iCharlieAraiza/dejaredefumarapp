@@ -15,7 +15,7 @@ const EditForm = ({profile, callback}) => {
   const price = useInput(profile.cigarrates.price, "text");
   const cigarratesPerDay = useInput(profile.cigarrates.cigarrates_per_day, "number");
   const dateQuit = useInput(profile.date_quit ? profile.date_quit : dayjs().format("YYYY-MM-DD"), "date");
-  const total = useInput(profile.cigarrates.total, "number");
+  const timeQuit = useInput(profile.time_quit, "time");
     
   if(!profile.username) {
     return null;
@@ -27,8 +27,8 @@ const EditForm = ({profile, callback}) => {
       age: age.value,
       date_quit: dateQuit.value,
       display_name: displayName.value,
+      time_quit: timeQuit.value,
       cigarrates: {
-        total: total.value,
         price: price.value,
         cigarrates_per_day: cigarratesPerDay.value
       }
@@ -44,17 +44,8 @@ const EditForm = ({profile, callback}) => {
 
   return (
     <form className="general-form" onSubmit={handleSubmit}>
-      <h4>Datos de cuenta</h4>
+      <h4>Datos de cuenta de <span>{profile.username}</span></h4>
       <div className="form-row form-row-2-col">
-        <div className="input-group">
-          <label htmlFor="">Email de usuario</label>
-          <input
-            placeholder="nombre@correo.com"
-            className="w-input"
-            {...email}
-            disabled
-          />
-        </div>
         <div className="input-group">
           <label htmlFor="">¿Cómo te llamas?</label>
           <input
@@ -77,6 +68,10 @@ const EditForm = ({profile, callback}) => {
           <label htmlFor="">¿Qué día dejaste de fumar?</label>
           <input {...dateQuit} className="w-input" />
         </div>
+        <div className="input-group">
+          <label htmlFor="">¿A qué hora?</label>
+          <input {...timeQuit} className="w-input" />
+        </div>
       </div>
       <h4>Información general</h4>
       <div className="form-row form-row-2-col">
@@ -87,14 +82,8 @@ const EditForm = ({profile, callback}) => {
         </div>
 
         <div className="input-group">
-          <label htmlFor="">¿Cuánto te costaba cada cajetilla?</label>
+          <label htmlFor="">¿Cuánto cuesta cada cajetilla? (20 cigarrillos)</label>
           <input {...price} className="w-input" pattern="^-?(?:0|[1-9]\d{0,2}(?:,?\d{3})*)(?:\.\d+)?$"/>
-        </div>
-      </div>
-      <div className="form-row form-row-2-col">
-        <div className="input-group">
-          <label htmlFor="">¿Cuántos cigarrillos tienen las cajetillas?</label>
-          <input {...total} className="w-input" pattern="[0-9]*"/>
         </div>
       </div>
 

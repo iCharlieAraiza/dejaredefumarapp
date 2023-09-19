@@ -11,6 +11,7 @@ import Badge from "./Badge";
 import HealthStatus from "./HealthStatus";
 
 import dayjs from "dayjs";
+import Motivation from "./Motivation";
 
 export const Dashboard = ({ profile }) => {
   console.log(profile);
@@ -79,6 +80,10 @@ export const Dashboard = ({ profile }) => {
         >
           <ClockIcon />
         </Badge>
+      </div>
+
+      <div className="row col-6">
+        <Motivation />
       </div>
 
       <div className="badge-section">

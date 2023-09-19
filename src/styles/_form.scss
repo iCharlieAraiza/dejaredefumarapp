@@ -33,6 +33,47 @@
   font-size: 15px;
 }
 
+.motivation-form {
+  max-width: 479px;
+  min-height: 50px;
+  height: auto;
+  font-weight: 500;
+  line-height: 1.6em;
+  background: transparent;
+  resize: none;
+  word-break: break-word;
+  overflow: hidden;
+  user-select: text;
+  cursor: text;
+  padding: 8px 3px;
+  border: 1px solid transparent;
+  font-weight: 400;
+  font-size: 1rem;
+  max-height: 6rem;
+  overflow: scroll;
+  &:focus {
+    outline: none;
+  }
+}
+
+.motivation-form__container {
+  z-index: 1;
+  position: relative;
+}
+
+.motivation-placeholder {
+  font-style: italic;
+  position: absolute;
+  color: #939393;
+  top: 0;
+  z-index: -1;
+}
+
+.motivation-form__section {
+  background-color: #f6f6f6;
+  padding: 1rem;
+  border-radius: 11px;
+}
 
 @media (min-width: 1068px) {
   .form-row-2-col {
