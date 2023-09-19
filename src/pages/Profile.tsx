@@ -2,8 +2,12 @@ import { Suspense, useContext } from "react";
 import MainLayout from "../layout/MainLayout";
 import { GlobalContext } from "../context/GlobalContext";
 import { Dashboard } from "../components/Dashboard/Dashboard";
+import {
+  DashboardPlaceholder,
+  SidebarPlaceholder,
+} from "../components/Placeholder";
 
-import TargetSvg from "../assets/target.svg";
+import { StarIcon} from "../components/Dashboard/Icons";
 
 export const Profile = () => {
   const { user, profile } = useContext(GlobalContext);
@@ -17,26 +21,35 @@ export const Profile = () => {
         <div className="col-left">
           {!loading && (
             <>
+              <div className="dashboard__label" style={{"marginBottom": "1rem"}}>
+                Nivel:
+                <span className="dashboard__level-tag">
+                  1 <StarIcon />
+                </span>
+              </div>
               <h1>
-                ¡Muy buenas {" "}
-                  <span style={{ color: "var(--color-orange)" }}> 
-                  {
-                    currentProfile?.display_name ? currentProfile.display_name.split(" ")[0]: " "
-                  }</span>
+                ¡Muy buenas{" "}
+                <span style={{ color: "var(--color-orange)" }}>
+                  {currentProfile?.display_name
+                    ? currentProfile.display_name.split(" ")[0]
+                    : " "}
+                </span>
                 !
               </h1>
               <h4>Aquí van tus estadísticas</h4>
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<SidebarPlaceholder />}>
                 <div className="sidebar__img">
                   <ProfileIcon />
                 </div>
               </Suspense>
             </>
           )}
+
+          {loading && <SidebarPlaceholder />}
         </div>
 
         <div className="col-right">
-          {loading && <h1>Loading...</h1>}
+          {loading && <DashboardPlaceholder />}
           {currentProfile.username && !loading && (
             <Dashboard profile={currentProfile} />
           )}
@@ -45,7 +58,6 @@ export const Profile = () => {
     </MainLayout>
   );
 };
-
 
 function ProfileIcon() {
   return (

@@ -8,6 +8,8 @@ import CheckDone from "../components/CheckDone";
 
 import { GlobalContext } from "../context/GlobalContext";
 
+import {EditPagePlaceholder} from '../components/Placeholder'
+
 export const Edit = () => {
   const [tabValue, setTabValue] = useState(1)
   const {profile} = useContext(GlobalContext)
@@ -27,7 +29,7 @@ export const Edit = () => {
               value={tabValue} 
               onChange={(e) => setTabValue(e)}
               items={[{value:1, label:"1. Configuración"}, {value:2, label:"2. Actualizar", disabled: true}]} />
-              {loading && <h1>Loading...</h1>}
+              {loading && <EditPagePlaceholder/>}
               {((currentProfile.username && !loading) && tabValue !== 2) && <EditForm profile ={currentProfile} callback = {() => setTabValue(2)} /> }
               {tabValue === 2 && <CheckDone />}
           </div>

@@ -2,6 +2,7 @@ import MainLayout from "../layout/MainLayout";
 
 import { useLoginWithGoogle } from "../hooks/authHooks";
 import { Link } from "react-router-dom";
+import {LoadingPagePlaceholder} from '../components/Placeholder'
 
 const Homepage = ({ session }) => {
   const [user, loading] = session;

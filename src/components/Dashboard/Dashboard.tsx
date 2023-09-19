@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 import { calculateDays } from "../../utils/calculatorUtils";
 import {
-  StarIcon,
   MoneyIcon,
   CigarreteIcon,
   ClockIcon,
@@ -33,10 +32,6 @@ export const Dashboard = ({ profile }) => {
       <div className="row dashsboard__top-row">
         <div className="dashboard__group">
           <div className="dashboard__label">
-            Nivel:
-            <span className="dashboard__level-tag">
-              1 <StarIcon />
-            </span>
           </div>
         </div>
         <div className="dashboard__group">

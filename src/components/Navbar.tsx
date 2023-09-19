@@ -79,7 +79,7 @@ const ButtonSection = ({ session }) => {
           </dt>
           <dt>
             <button className="btn" onClick={() => logout()}>
-              <AiOutlineLogin style={{ "margin-right": "10px" }} />
+              <AiOutlineLogin style={{ "marginRight": "10px" }} />
               Sign Out
             </button>
           </dt>
