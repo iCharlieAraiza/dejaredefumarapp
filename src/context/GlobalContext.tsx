@@ -3,7 +3,7 @@ import { useAuthState } from "../hooks/authHooks";
 import { profileReducer } from "./ProfileReducer";
 import {getProfile, createProfile, updateProfile} from "../firebase/firestoreServices"
 
-export const GlobalContext = createContext({user: [], profile:[], updateProfileService: (data) => {}, updateWhitoutLoading: ()=>{}});
+export const GlobalContext = createContext({user: [], profile:[], updateProfileService: (data) => {}, updateWhitoutLoading: (data)=>{}});
 
 const profileInitialState = {
   username: "",

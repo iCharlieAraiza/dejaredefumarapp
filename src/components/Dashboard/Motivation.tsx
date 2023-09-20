@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { useDebounce } from "../../hooks/useDebounce";
 import { GlobalContext } from "../../context/GlobalContext";
 
@@ -8,6 +8,7 @@ const Motivation = ({ value }) => {
   const [refValue, setRefValue] = useState(value);
   const motivationUpdate = useDebounce(formValue, 2000);
   const [loading, setLoading] = useState(false);
+  const ref = useRef();
 
   useEffect(() => {
     if (refValue != motivationUpdate) {
@@ -18,6 +19,11 @@ const Motivation = ({ value }) => {
     }
     return () => {};
   }, [motivationUpdate]);
+
+  useEffect(() => {
+    ref.current.focus();
+  }
+  , [value]);
 
   const updateMotivation = async () => {
     try {
@@ -42,12 +48,13 @@ const Motivation = ({ value }) => {
         </div>
         <div className="motivation-form__container">
           <div
-            contentEditable="true"
+            contentEditable={true}
             suppressContentEditableWarning={true}
             className="motivation-form"
             onKeyUp={handler}
+            ref={ref}
           >
-            {value}
+            { value }
           </div>
 
           {formValue == "" && (
