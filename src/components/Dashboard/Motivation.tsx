@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, useRef } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useDebounce } from "../../hooks/useDebounce";
 import { GlobalContext } from "../../context/GlobalContext";
 
@@ -8,22 +8,27 @@ const Motivation = ({ value }) => {
   const [refValue, setRefValue] = useState(value);
   const motivationUpdate = useDebounce(formValue, 2000);
   const [loading, setLoading] = useState(false);
-  const ref = useRef();
+  
+  useEffect(() => {
+    const form = document.querySelector(".motivation-form");
+    if (form) {
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+    }
+  }
+  , [value]);
 
   useEffect(() => {
+    console.log("MOTIVATION UPDATE", motivationUpdate);
+    console.log("REF VALUE", refValue);
+
     if (refValue != motivationUpdate) {
       setLoading(false);
-      console.log("MOTIVATION UPDATE", motivationUpdate);
       setRefValue(motivationUpdate);
       updateMotivation();
     }
     return () => {};
   }, [motivationUpdate]);
-
-  useEffect(() => {
-    ref.current.focus();
-  }
-  , [value]);
 
   const updateMotivation = async () => {
     try {
@@ -34,11 +39,9 @@ const Motivation = ({ value }) => {
   };
 
   const handler = (e) => {
-    if (formValue !== e.target.innerHTML) {
-      //Whatever you put here will act just like an onChange event
-      setFormValue(e.target.textContent);
-      setLoading(true);
-    }
+    console.log(e.target.textContent);
+    setFormValue(e.target.textContent);
+    setLoading(true);
   };
   return (
     <>
@@ -52,7 +55,6 @@ const Motivation = ({ value }) => {
             suppressContentEditableWarning={true}
             className="motivation-form"
             onKeyUp={handler}
-            ref={ref}
           >
             { value }
           </div>
