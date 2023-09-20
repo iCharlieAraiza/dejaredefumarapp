@@ -34,7 +34,6 @@
 }
 
 .motivation-form {
-  max-width: 479px;
   min-height: 50px;
   height: auto;
   font-weight: 500;
@@ -67,6 +66,7 @@
   color: #939393;
   top: 0;
   z-index: -1;
+  padding: 2px;
 }
 
 .motivation-form__section {

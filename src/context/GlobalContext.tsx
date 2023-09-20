@@ -3,7 +3,7 @@ import { useAuthState } from "../hooks/authHooks";
 import { profileReducer } from "./ProfileReducer";
 import {getProfile, createProfile, updateProfile} from "../firebase/firestoreServices"
 
-export const GlobalContext = createContext({user: [], profile:[], updateProfileService: (data) => {}});
+export const GlobalContext = createContext({user: [], profile:[], updateProfileService: (data) => {}, updateWhitoutLoading: ()=>{}});
 
 const profileInitialState = {
   username: "",
@@ -73,11 +73,16 @@ export const GlobalProvider = ({ children }) => {
     setProfileLoading(false)
   }
 
+  const updateWhitoutLoading = async (data) => {
+    await updateProfile(data)
+    dispatch({type: "UPDATE", payload: data})
+  }
+
 
   return (
     <GlobalContext.Provider
       value={{
-        user:[user, loading, error], profile:[profile, profileLoading], updateProfileService
+        user:[user, loading, error], profile:[profile, profileLoading], updateProfileService, updateWhitoutLoading
       }}
     >
       {children}

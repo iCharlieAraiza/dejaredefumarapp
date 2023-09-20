@@ -83,7 +83,7 @@ export const Dashboard = ({ profile }) => {
       </div>
 
       <div className="row col-6">
-        <Motivation />
+        <Motivation value={profile.motivation} />
       </div>
 
       <div className="badge-section">
