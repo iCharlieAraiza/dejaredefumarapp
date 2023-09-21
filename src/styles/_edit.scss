@@ -1,7 +1,18 @@
-.sidebar__img {
+.sidebar-edit__img {
+  display: flex;
+  justify-content: center;
   svg {
-    width: 160px;
+    width: 130px;
     height: auto;
     display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar-edit__img {
+    justify-content: start;
+    svg {
+      margin-left: 2rem;
+    }
   }
 }
