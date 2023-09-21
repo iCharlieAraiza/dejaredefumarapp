@@ -9,9 +9,9 @@ const HealthStatus = ({ days }) => {
     <>
       <div className="row col-6">
         {badges.reverse().map((badge) =>
-          badge.benefits.reverse().map((benefit) => {
+          badge.benefits.map((benefit) => {
             return <Badge title={benefit.title} key={benefit.title} description={benefit.description} svg={benefit.svg} />;
-          })
+          }).reverse()
         )}
       </div>
     </>

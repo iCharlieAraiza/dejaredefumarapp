@@ -2,6 +2,7 @@
 
 @use 'avatar';
 @use 'buttons';
+@use 'checkdone';
 @use 'dashboard';
 @use 'form';
 @use 'headers';
@@ -11,6 +12,7 @@
 @use 'layout';
 @use 'loader';
 @use 'tabs';
+@use 'edit';
 
 
 body {

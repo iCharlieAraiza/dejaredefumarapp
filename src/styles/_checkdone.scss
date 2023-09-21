@@ -1,0 +1,44 @@
+.checkdone {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.checkdone__icon {
+  svg {
+    height: initial;
+    width: 110px;
+    animation-name: spin;
+    animation-duration: .5s;
+  }
+}
+
+.checkdone__title {
+  text-align: center;
+  font-size: 32px;
+  line-height: 35px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.checkdone__description {
+  text-align: center;
+  max-width: 412px;
+}
+
+.checkdone__button-section {
+  display: flex;
+  justify-content: end;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0)
+  }
+
+  to {
+      transform: rotate(360deg)
+  }
+}

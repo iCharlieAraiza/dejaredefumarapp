@@ -21,12 +21,6 @@ export const Profile = () => {
         <div className="col-left">
           {!loading && (
             <>
-              <div className="dashboard__label" style={{"marginBottom": "1rem"}}>
-                Nivel:
-                <span className="dashboard__level-tag">
-                  1 <StarIcon />
-                </span>
-              </div>
               <h1>
                 ¡Muy buenas{" "}
                 <span style={{ color: "var(--color-orange)" }}>
