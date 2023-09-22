@@ -89,8 +89,8 @@ const EditForm = ({profile, callback}) => {
 
       <div className="form-row">
         <div className="input-group">
-          <button type="submit" className="btn">
-            Submit
+          <button type="submit" className="btn btn-big">
+            Actualizar
           </button>
         </div>
       </div>

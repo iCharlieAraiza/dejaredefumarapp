@@ -10,6 +10,8 @@ import {
 import Badge from "./Badge";
 import HealthStatus from "./HealthStatus";
 
+import {calculateLevel} from "../../utils/levelUtils"
+
 import dayjs from "dayjs";
 import Motivation from "./Motivation";
 
@@ -55,7 +57,7 @@ export const Dashboard = ({ profile }) => {
         </div>
         <div className="dashboard__group text-right-lg">
           <div className="dashboard__label">Siguiente objetivo</div>
-          <div className="dashboard__value dashboard__value--small">33/100</div>
+          <div className="dashboard__value dashboard__value--small">{calculateLevel(days)}</div>
         </div>
       </div>
 
