@@ -15,13 +15,9 @@ const Motivation = ({ value }) => {
       const sel = window.getSelection();
       sel.removeAllRanges();
     }
-  }
-  , [value]);
+  }, [value]);
 
   useEffect(() => {
-    console.log("MOTIVATION UPDATE", motivationUpdate);
-    console.log("REF VALUE", refValue);
-
     if (refValue != motivationUpdate) {
       setLoading(false);
       setRefValue(motivationUpdate);
@@ -39,7 +35,6 @@ const Motivation = ({ value }) => {
   };
 
   const handler = (e) => {
-    console.log(e.target.textContent);
     setFormValue(e.target.textContent);
     setLoading(true);
   };
@@ -54,8 +49,7 @@ const Motivation = ({ value }) => {
             contentEditable={true}
             suppressContentEditableWarning={true}
             className="motivation-form"
-            onBlur={handler}
-          >
+            onBlur={handler}>
             { value }
           </div>
 

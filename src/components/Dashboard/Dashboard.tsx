@@ -1,34 +1,29 @@
-import { Form, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import dayjs from "dayjs";
 
 import { calculateDays } from "../../utils/calculatorUtils";
-import {
-  MoneyIcon,
-  CigarreteIcon,
-  ClockIcon,
-} from "./Icons";
-import Badge from "./Badge";
-import {HealthDashboard} from "./HealthStatus";
+import { MoneyIcon, CigarreteIcon, ClockIcon} from "./Icons";
 
+import Badge from "./Badge";
+
+import {HealthDashboard} from "./HealthStatus";
 import {calculateLevel} from "../../utils/levelUtils"
 import {getCompletedBenefitsOfTotal} from '../../utils/healthUtils'
 
-import dayjs from "dayjs";
 import Motivation from "./Motivation";
 
 export const Dashboard = ({ profile }) => {
-  console.log(profile);
   const days = calculateDays(profile.date_quit, dayjs().format("YYYY-MM-DD"));
   const price = profile.cigarrates.price ? profile.cigarrates.price : 0;
   const cigarretesBox = profile.cigarrates.total
     ? profile.cigarrates.total
     : 20;
+
   const cigarretesPerDay = profile.cigarrates.cigarrates_per_day
     ? profile.cigarrates.cigarrates_per_day
     : 0;
 
-  const cigarretesPerDayPrice =
-    ((price * cigarretesPerDay) / cigarretesBox) * days;
-
+  const cigarretesPerDayPrice = ((price * cigarretesPerDay) / cigarretesBox) * days;
 
   return (
     <section className="dashboard__container">
@@ -64,22 +59,19 @@ export const Dashboard = ({ profile }) => {
       <div className="row col-3">
         <Badge
           title="Has ahorrado"
-          value={`$${Math.round(cigarretesPerDayPrice)}`}
-        >
+          value={`$${Math.round(cigarretesPerDayPrice)}`}>
           <MoneyIcon />
         </Badge>
 
         <Badge
           title="Cigarrillos sin fumar"
-          value={`${cigarretesPerDay * days}`}
-        >
+          value={`${cigarretesPerDay * days}`}>
           <CigarreteIcon />
         </Badge>
 
         <Badge
           title="Minutos de vida"
-          value={`${cigarretesPerDay * days * 11}`}
-        >
+          value={`${cigarretesPerDay * days * 11}`}>
           <ClockIcon />
         </Badge>
       </div>
