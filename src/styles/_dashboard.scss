@@ -86,6 +86,30 @@
   margin-bottom: 1.5rem!important;
 }
 
+.health-badge__progress {
+  margin-top: -1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+
+.health-badge__sr-only {
+  width: 180px;
+  text-align: right;
+}
+
+
+.progress-bar__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.health-badge__progress-bar {
+  height: 10px;
+}
+
+
 .health-badge__title {
   font-weight: 600;
 }
@@ -105,6 +129,10 @@
   } 
   .text-right-lg {
     text-align: right;
+  }
+
+  .health-badge {
+    min-height: 115px;
   }
 
   .dashboard__group {

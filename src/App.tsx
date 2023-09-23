@@ -11,9 +11,10 @@ import PrivateRoute from "./routes/PrivateRoute";
 import SignUp from "./pages/SignUp";
 import NotLoggedRoute from "./routes/NotLoggedRoute";
 import Login from "./pages/Login";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import Health from "./pages/Health";
 
 function App() {
   const { user } = useContext(GlobalContext);
@@ -23,8 +24,22 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="*" element={<h1>Ups, element not found</h1>} />
-          <Route path="signup" element={<NotLoggedRoute><SignUp /></NotLoggedRoute>} />
-          <Route path="login" element={<NotLoggedRoute><Login /></NotLoggedRoute>} />
+          <Route
+            path="signup"
+            element={
+              <NotLoggedRoute>
+                <SignUp />
+              </NotLoggedRoute>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <NotLoggedRoute>
+                <Login />
+              </NotLoggedRoute>
+            }
+          />
           <Route path="/" element={<Homepage session={user} />} />
           <Route
             path="profile"
@@ -39,6 +54,15 @@ function App() {
             element={
               <PrivateRoute>
                 <Edit />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="health"
+            element={
+              <PrivateRoute>
+                <Health />
               </PrivateRoute>
             }
           />

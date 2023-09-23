@@ -31,7 +31,7 @@ const HEALTH_BADGES = [
       {title:"El riesgo de sufrir un ataque cardíaco disminuye de forma considerable", 
       description:"Al mejorar la circulación, la probabilidad de sufrir algún ataque cardiaco ha disminuido de manera importante.", svg:<HeartAttackIcon/>},
       {title:"Tu circulación mejora y aumenta la capacidad pulmonar", 
-      description:"Ahora los pulmones funcionan considerablemente mejor. La circulación también se ha beneficiado.", svg: <LungsIcon/>}
+      description:"Ahora los pulmones funcionan mejor. La circulación también se ha beneficiado.", svg: <LungsIcon/>}
       
     ]
   },
@@ -54,14 +54,36 @@ const HEALTH_BADGES = [
   {
     "time": 365,
     "benefits": [
-      {title:"La probabilidad de sufrir una enfermedad cardiaca se disminuye a la mitad", 
-      description:"Tu cuerpo ha eliminado gran parte de las sustancias nocivas y tanto tu circulación como el nivel de colesterol han mejorado considerablemente.", svg: <GoodHealthIcon/>}
+      {title:"La probabilidad de una enfermedad cardiaca disminuye a la mitad", 
+      description:"Tu cuerpo ha eliminado gran parte de las sustancias nocivas y tanto tu circulación como el nivel de colesterol han mejorado.", svg: <GoodHealthIcon/>}
     ]
   }
 ]
 
+
 export const getHealthBadges = (days: number) => {  
   return HEALTH_BADGES.filter(badge => badge.time <= days)
+}
+
+export const getCompletedBenefitsOfTotal = (days: number) => {
+  let allBenefits = 0;
+  let current = 0;
+  HEALTH_BADGES.forEach(badges =>  {
+    allBenefits+= badges.benefits.length
+    if(days >= badges.time) {
+      console.log("IS GRATER")
+      current += badges.benefits.length
+    }
+  })
+
+  return `(${current}/${allBenefits})`
+}
+ 
+
+export const getAllHealthBadges = (props:{reverse?:boolean}) => {
+  const {reverse} = props
+  if(reverse) return HEALTH_BADGES.reverse()
+  return HEALTH_BADGES
 }
 
 function HeartIcon() {

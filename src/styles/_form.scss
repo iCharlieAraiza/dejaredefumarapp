@@ -33,6 +33,10 @@
   font-size: 15px;
 }
 
+.motivation__label {
+  color: black;
+}
+
 .motivation-form {
   min-height: 50px;
   height: auto;
@@ -70,7 +74,7 @@
 }
 
 .motivation-form__section {
-  background-color: #f6f6f6;
+  background-color: #f7f8fc;
   padding: 1rem;
   border-radius: 11px;
 }

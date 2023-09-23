@@ -1,6 +1,6 @@
 export const calculateLevel = (days: number) => {
   if(days > 1000) {
-    return '🏆'
+    return '🏆 🎉'
   }
   
   let goal = 0

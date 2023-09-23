@@ -1,7 +1,6 @@
-import { getHealthBadges } from "../../utils/healthUtils";
+import { getHealthBadges, getAllHealthBadges } from "../../utils/healthUtils";
 
 const HealthStatus = ({ days }) => {
-  console.log(getHealthBadges(days));
 
   const badges = getHealthBadges(days);
 
@@ -18,7 +17,22 @@ const HealthStatus = ({ days }) => {
   );
 };
 
-const Badge = ({ title, description , svg }) => {
+export const HealthDashboard = ({ days }) => {
+  const badges = getAllHealthBadges(days);
+  return (
+    <>
+      <div className="row col-6">
+        {badges.reverse().slice(0,2).map((badge) =>
+          badge.benefits.map((benefit) => {
+            return <Badge title={benefit.title} key={benefit.title} description={benefit.description} svg={benefit.svg} />;
+          }).reverse()
+        )}
+      </div>
+    </>
+  );
+}
+
+export const Badge = ({ title, description , svg }) => {
   return (
     <div className="dashboard__group health-badge">
       <div className="aux-icon">

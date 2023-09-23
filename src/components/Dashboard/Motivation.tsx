@@ -46,7 +46,7 @@ const Motivation = ({ value }) => {
   return (
     <>
       <div className="motivation-form__section">
-        <div className="dashboard__label">
+        <div className="dashboard__label motivation__label">
           💭 Tu motivación {loading && <span style={{"float":"right"}}>Cargando…</span>}
         </div>
         <div className="motivation-form__container">
@@ -54,7 +54,7 @@ const Motivation = ({ value }) => {
             contentEditable={true}
             suppressContentEditableWarning={true}
             className="motivation-form"
-            onKeyUp={handler}
+            onBlur={handler}
           >
             { value }
           </div>

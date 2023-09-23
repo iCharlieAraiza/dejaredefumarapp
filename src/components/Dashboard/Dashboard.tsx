@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 
 import { calculateDays } from "../../utils/calculatorUtils";
 import {
   MoneyIcon,
   CigarreteIcon,
   ClockIcon,
-  HeartIcon,
 } from "./Icons";
 import Badge from "./Badge";
-import HealthStatus from "./HealthStatus";
+import {HealthDashboard} from "./HealthStatus";
 
 import {calculateLevel} from "../../utils/levelUtils"
+import {getCompletedBenefitsOfTotal} from '../../utils/healthUtils'
 
 import dayjs from "dayjs";
 import Motivation from "./Motivation";
@@ -64,7 +64,7 @@ export const Dashboard = ({ profile }) => {
       <div className="row col-3">
         <Badge
           title="Has ahorrado"
-          value={`${Math.round(cigarretesPerDayPrice)}€`}
+          value={`$${Math.round(cigarretesPerDayPrice)}`}
         >
           <MoneyIcon />
         </Badge>
@@ -90,11 +90,11 @@ export const Dashboard = ({ profile }) => {
 
       <div className="badge-section">
         <div className="row">
-          <a href="#" className="dashboard__readmore">
-            Insignias ganadas →
-          </a>
+          <Link to="/health" className="dashboard__readmore">
+            Insignias ganadas {getCompletedBenefitsOfTotal(days)} →
+          </Link>
         </div>
-        <HealthStatus days={days} />
+        <HealthDashboard days={days} />
       </div>
     </section>
   );
