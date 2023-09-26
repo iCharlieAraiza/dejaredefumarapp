@@ -17,8 +17,6 @@ const AppDescription = () => {
       </div>
       <div className="whole-container">
         <div className="container">
-          <h3>This is a new title</h3>
-          <p>Add a new title here</p>
         </div>
       </div>
     </div>
