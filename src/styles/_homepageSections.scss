@@ -1,0 +1,24 @@
+.top-app_description {
+  height: 2rem;
+  overflow: hidden;
+  svg {
+    min-height: 3rem;
+  }
+}
+
+.whole-container {
+  padding: 1rem 0;
+  background-color: #F2EEE1;
+}
+
+@media (min-width: 479px) {
+
+}
+
+@media (min-width: 767px) {
+  .top-app_description{
+    svg {
+      width: 100%;
+    }
+  }
+}
