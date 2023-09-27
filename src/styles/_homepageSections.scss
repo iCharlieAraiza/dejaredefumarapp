@@ -15,7 +15,7 @@
 }
 
 .section-homepage__column {
-  width: 50%;
+  width: 100%;
   min-width: 250px;
 }
 
@@ -68,6 +68,11 @@
   .whole-container {
     padding: 2.5rem 0;
   }
+
+  .section-homepage__column {
+    width: 50%;
+  }
+ 
   .top-app_description{
     svg {
       width: 100%;
