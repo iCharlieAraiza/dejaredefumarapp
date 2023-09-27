@@ -91,3 +91,12 @@
     padding: 3rem 0;
   }
 }
+
+@media (min-width: 1700px) {
+  .top-app_description {
+    svg {
+      min-width: 100vw;
+      height: 60px;
+    }
+  }
+}
