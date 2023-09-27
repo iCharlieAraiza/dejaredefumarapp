@@ -2,7 +2,7 @@ import MainLayout from "../layout/MainLayout";
 
 import { useLoginWithGoogle } from "../hooks/authHooks";
 import Hero from "../components/Hero";
-import AppDescription from "../components/AppDescription";
+import HomepageDescription from "../components/HomepageDescription";
 
 import {LoadingPagePlaceholder} from '../components/Placeholder'
 
@@ -16,7 +16,7 @@ const Homepage = ({ session }) => {
   return (
     <MainLayout>
       <Hero />
-      <AppDescription />
+      <HomepageDescription />
     </MainLayout>
   );
 };

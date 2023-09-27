@@ -39,6 +39,10 @@ p {
   margin: 7px 0;
 }
 
+li {
+  word-break: break-all;
+}
+
 .black-link {
   color: var(--color-font);
 }

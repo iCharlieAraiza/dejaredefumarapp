@@ -1,4 +1,3 @@
-import React from "react";
 import { getAllHealthBadges } from "../../utils/healthUtils";
 import { Badge } from "./Badge";
 
@@ -9,11 +8,15 @@ const calculatePercentage = (props: { days: number; time: number }) => {
 };
 
 const HealthBadgeSection = ({ days }) => {
-  const badges = getAllHealthBadges({ reverse: true });
+  const badges = getAllHealthBadges({ reverse: false });
+  const badgesByGroup = badges.map((badge) => badge.benefits.map((benefit) => benefit));
+  console.log(badgesByGroup);
+
+
   return (
     <>
       <div className="row col-6">
-        {badges.reverse().map((badge) =>
+        {badges.map((badge) =>
           badge.benefits.map((benefit) => {
             return (
               <div>
