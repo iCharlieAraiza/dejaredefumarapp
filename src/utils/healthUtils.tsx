@@ -332,3 +332,54 @@ function GoodHealthIcon() {
     </svg>
   );
 }
+
+export const FIXED_HEALTH = [
+  {
+    "time": 0,
+    title:"Tu frecuencia cardíaca baja", description:"La frecuencia cardiaca disminuye a los 30 minutos del último cigarrillo.", svg: <HeartIcon/> 
+  },
+  {
+    "time": 1,
+    title:"El nivel de monóxido de carbono en sangre disminuye", description:"En un plazo de 8 a 12 horas, el nivel de monóxido de carbono en la sangre disminuye y el oxígeno en la sangre aumenta.", svg: <CO2Icon/>
+  },
+  {
+    "time": 3,
+    title:"La nicotina ya se ha eliminado de tu cuerpo", 
+      description:"Tu cuerpo ha eliminado prácticamente toda la nicotina.", svg: <NicotineIcon/>
+  },
+  {
+    "time": 2,
+      title:"Su capacidad para oler y saborear mejora", 
+      description:"Las terminaciones nerviosas dañadas por fumar comienzan a volver a crecer, mejorando el sentido del olfato y el gusto.", svg: <NoseIcon/>
+  },
+  {
+    "time": 14,
+    title:"El riesgo de sufrir un ataque cardíaco disminuye de forma considerable", 
+    description:"Al mejorar la circulación, la probabilidad de sufrir algún ataque cardiaco ha disminuido de manera importante.", svg:<HeartAttackIcon/>
+  },
+  {
+    "time": 14,
+    title:"Tu circulación mejora y aumenta la capacidad pulmonar", 
+    description:"Ahora los pulmones funcionan mejor. La circulación también se ha beneficiado.", svg: <LungsIcon/>
+  },
+  {
+    "time": 28,
+    title:"Disminuye la tos y la dificultad de respirar", 
+      description:"Se empiezan a recuperar las estructuras de tus pulmones, por lo que la tos y la probabilidad de enfermarte disminuyen", svg:<BreathIcon/>
+  },
+  {
+    "time": 28,
+   title:"Ha desaparecido la dependencia física a la nicotina", 
+      description: "Para este punto, la necesidad física de querer fumar ha desaparecido. Es decir, las «ganas de fumar» ahora son más psicológicas que físicas.", svg: <AdictionIcon/>
+  },
+  {
+    "time": 168,
+  title:"Tu condición física es similar a la de un no fumador", 
+      description: "Luego de los 6 meses, tu capacidad de realizar actividades físicas es similar a la de un no-fumador.", svg: <MuscleIcon/>
+  },
+  {
+    "time": 365,
+    title:"La probabilidad de una enfermedad cardiaca disminuye a la mitad", 
+      description:"Tu cuerpo ha eliminado gran parte de las sustancias nocivas y tanto tu circulación como el nivel de colesterol han mejorado.", svg: <GoodHealthIcon/>
+  }
+]
