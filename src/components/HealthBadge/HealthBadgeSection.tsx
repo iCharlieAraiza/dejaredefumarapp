@@ -1,4 +1,4 @@
-import { getAllHealthBadges } from "../../utils/healthUtils";
+import { HEALTH_BADGES } from "../../utils/healthUtils";
 import { Badge } from "./Badge";
 
 const calculatePercentage = (props: { days: number; time: number }) => {
@@ -8,9 +8,9 @@ const calculatePercentage = (props: { days: number; time: number }) => {
 };
 
 const HealthBadgeSection = ({ days }) => {
-  const badges = getAllHealthBadges({ reverse: false });
+  const badges = HEALTH_BADGES
   const badgesByGroup = badges.map((badge) => badge.benefits.map((benefit) => benefit));
-  console.log(badgesByGroup);
+  console.log("NEW BADGES", badgesByGroup);
 
 
   return (
@@ -19,10 +19,9 @@ const HealthBadgeSection = ({ days }) => {
         {badges.map((badge) =>
           badge.benefits.map((benefit) => {
             return (
-              <div>
+              <div key={new Date().getTime() + Math.random()}>
                   <Badge
                     title={benefit.title}
-                    key={benefit.title + new Date().getTime()}
                     description={benefit.description}
                     svg={benefit.svg}
                     percentage={calculatePercentage({ days, time: badge.time })}

@@ -1,4 +1,4 @@
-const HEALTH_BADGES = [
+export const HEALTH_BADGES = [
   {
     "time": 0,
     "benefits": [
