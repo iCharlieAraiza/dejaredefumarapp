@@ -1,5 +1,6 @@
-import { HEALTH_BADGES, FIXED_HEALTH } from "../../utils/healthUtils";
+import { FIXED_HEALTH } from "../../utils/healthUtils";
 import { Badge } from "./Badge";
+import { useEffect } from "react";
 
 const calculatePercentage = (props: { days: number; time: number }) => {
   const { days, time } = props;
@@ -7,11 +8,10 @@ const calculatePercentage = (props: { days: number; time: number }) => {
   return Math.round((days / time) * 100);
 };
 
-const HealthBadgeSection = ({ days }) => {
-  const badges = HEALTH_BADGES
-  const badgesByGroup = badges.map((badge) => badge.benefits.map((benefit) => benefit));
-  console.log("NEW BADGES", badgesByGroup);
-
+const HealthBadgeSection = ({ days }) => {  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <>
