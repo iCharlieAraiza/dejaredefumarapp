@@ -22,7 +22,7 @@ const HealthBadgeSection = ({ days }) => {
               <div>
                   <Badge
                     title={benefit.title}
-                    key={benefit.title}
+                    key={benefit.title + new Date().getTime()}
                     description={benefit.description}
                     svg={benefit.svg}
                     percentage={calculatePercentage({ days, time: badge.time })}
