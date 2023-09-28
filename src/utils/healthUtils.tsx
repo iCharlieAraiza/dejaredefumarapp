@@ -83,6 +83,8 @@ export const getCompletedBenefitsOfTotal = (days: number) => {
 export const getAllHealthBadges = (props:{reverse?:boolean}) => {
   const {reverse} = props
   console.log(reverse)
+  console.log("load badges")
+  
   return HEALTH_BADGES
 }
 
