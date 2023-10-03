@@ -13,7 +13,7 @@ const NotLoggedRoute = ({children}) => {
 
   if(error) return <h1>{error}</h1>
 
-  return <Navigate to="/" />
+  return <Navigate to="/profile" />
 
 
 }

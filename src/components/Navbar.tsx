@@ -20,7 +20,7 @@ const Navbar = () => {
       <nav>
         <div className="container navbar__container">
           <span className="navbar__logo">
-            <Link to="/">
+            <Link to={session ? "/profile" : "/"}>
               <LogoSvg />
             </Link>
           </span>
