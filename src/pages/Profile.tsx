@@ -8,6 +8,8 @@ import {
 } from "../components/Placeholder";
 
 import { StarIcon} from "../components/Dashboard/Icons";
+import Breadcrumb from "../components/Breadcrumb";
+import { Link } from "react-router-dom";
 
 export const Profile = () => {
   const { user, profile } = useContext(GlobalContext);
@@ -43,6 +45,15 @@ export const Profile = () => {
         </div>
 
         <div className="col-right">
+          <Breadcrumb 
+            link="/profile"
+            current="Panel de control"
+          >
+            <Link to="/edit" className="dashboard__edit">
+              Editar información
+            </Link>
+          </Breadcrumb>
+
           {loading && <DashboardPlaceholder />}
           {currentProfile.username && !loading && (
             <Dashboard profile={currentProfile} />

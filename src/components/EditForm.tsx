@@ -44,7 +44,7 @@ const EditForm = ({profile, callback}) => {
 
   return (
     <form className="general-form" onSubmit={handleSubmit}>
-      <h4>Datos de cuenta de <span>{profile.username}</span></h4>
+      <h4>Datos de la cuenta</h4>
       <div className="form-row form-row-2-col">
         <div className="input-group">
           <label htmlFor="">¿Cómo te llamas?</label>

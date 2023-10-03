@@ -32,11 +32,7 @@ export const Dashboard = ({ profile }) => {
           <div className="dashboard__label">
           </div>
         </div>
-        <div className="dashboard__group">
-          <Link to="/edit" className="dashboard__edit">
-            Editar información
-          </Link>
-        </div>
+
       </div>
 
       <div className="row col-6 dashboard__first-section">

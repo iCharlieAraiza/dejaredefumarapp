@@ -10,6 +10,7 @@ import { GlobalContext } from "../context/GlobalContext";
 
 import { EditPagePlaceholder } from "../components/Placeholder";
 import { Link } from "react-router-dom";
+import Breadcrumb from "../components/Breadcrumb";
 
 export const Edit = () => {
   const [tabValue, setTabValue] = useState(1);
@@ -51,9 +52,10 @@ export const Edit = () => {
             </div>
           </div>
           <div className="column-2">
-            <div className="checkdone__button-section">
+            <Breadcrumb link="/profile" current="Editar perfil">
               <Link to="/profile">← Volver a mi perfil</Link>
-            </div>
+            </Breadcrumb>
+            <div style={{"marginBottom": "1rem"}} className="checkdone__button-section"></div>
             <Tabs
               value={tabValue}
               onChange={(e) => setTabValue(e)}
