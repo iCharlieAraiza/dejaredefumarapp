@@ -73,7 +73,7 @@ const Hero = () => {
         </div>
         <div className="hero-status">
           <p>
-            Actualmente disponible fase <b>Alfa 1.2</b>
+            Actualmente disponible fase <b>Alfa 2.1</b>
           </p>
         </div>
       </div>
