@@ -6,6 +6,9 @@ import ArmIcon from "../assets/hero/arm_icon.png";
 import ArrowIcon from "../assets/hero/arrow_icon.png";
 import CigarreteIcon from "../assets/hero/cigarrete_icon.png";
 
+import ChromeBtn from "../assets/hero/chrome-btn1.png";
+import WebAppBtn from "../assets/hero/webapp-btn.png";
+
 const Hero = () => {
   return (
     <div className="hero">
@@ -75,6 +78,17 @@ const Hero = () => {
           <p>
             Actualmente disponible fase <b>Alfa 2.1</b>
           </p>
+        </div>
+        <div className="hero-download">
+          <Link to="/login">
+            <img src={WebAppBtn} alt="Abrir la aplicaicón web" />
+          </Link>
+          <Link to="/login" className="disabled">
+            <img
+              src={ChromeBtn}
+              alt="Descargar la extensión en Chrome"
+            />
+          </Link>
         </div>
       </div>
     </div>

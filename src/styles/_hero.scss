@@ -92,6 +92,26 @@
   right: 6rem;
 }
 
+.hero-download {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-bottom: -15px;
+  margin-top: 15px;
+  a {
+    display: initial;
+  }
+  img {
+    width: 100%;
+    max-width: 120px;
+  }
+  .disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
 @media (min-width: 479px) {
   .big-paragrah {
     font-size: 22px;
