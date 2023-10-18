@@ -81,12 +81,13 @@ const Hero = () => {
         </div>
         <div className="hero-download">
           <Link to="/login">
-            <img src={WebAppBtn} alt="Abrir la aplicaicón web" />
+            <img src={WebAppBtn} alt="Abrir la aplicaicón web" loading="lazy"  />
           </Link>
           <Link to="/login" className="disabled">
             <img
               src={ChromeBtn}
               alt="Descargar la extensión en Chrome"
+              loading="lazy" 
             />
           </Link>
         </div>
